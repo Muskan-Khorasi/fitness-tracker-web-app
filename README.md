@@ -67,6 +67,18 @@ Request → Gunicorn → Django URLs → View → Model (ORM) → PostgreSQL
                                  Template → Bootstrap → Response
 ```
 
+```mermaid
+flowchart LR
+    A[Browser] --> B[Gunicorn]
+    B --> C[Django URLs]
+    C --> D[Views]
+    D --> E[ORM]
+    E --> F[(PostgreSQL)]
+    D --> G[Templates]
+    G --> H[Bootstrap]
+    H --> A
+```
+
 fitness-tracker/
 │
 ├── fitness_project/ → project configuration
