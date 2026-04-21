@@ -59,6 +59,46 @@ their progress over time — with a dashboard, weekly goals, and streak tracking
 
 ---
 
+## Project Structure
+
+```
+fitness-tracker/
+│
+├── fitness_project/            → project configuration
+│   ├── settings.py             → environment-aware settings
+│   ├── urls.py                 → root URL configuration
+│   └── wsgi.py                 → WSGI entry point
+│
+├── tracker/                    → main application
+│   ├── migrations/             → database migration files
+│   ├── templates/
+│   │   └── tracker/
+│   │       ├── base.html       → master template with navbar
+│   │       ├── home.html       → public landing page
+│   │       ├── login.html      → login page
+│   │       ├── register.html   → registration page
+│   │       ├── workout_list.html   → view all workouts
+│   │       ├── add_workout.html    → log a workout
+│   │       ├── edit_workout.html   → edit a workout
+│   │       ├── delete_workout.html → delete confirmation
+│   │       ├── dashboard.html      → stats and charts
+│   │       └── progress.html       → goals and streak
+│   ├── models.py               → Workout, UserProfile models
+│   ├── views.py                → all views and business logic
+│   ├── urls.py                 → app-level URL patterns
+│   ├── forms.py                → ModelForms with Bootstrap styling
+│   └── admin.py                → Django admin registration
+│
+├── .env                        → local secrets (not committed)
+├── .gitignore                  → ignored files
+├── Procfile                    → Railway start command
+├── railway.toml                → Railway build and deploy config
+├── requirements.txt            → Python dependencies
+└── README.md
+```
+
+---
+
 ## Local Setup
 
 **1. Clone the repo**
