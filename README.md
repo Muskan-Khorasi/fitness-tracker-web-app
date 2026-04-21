@@ -9,24 +9,27 @@ their progress over time — with a dashboard, weekly goals, and streak tracking
 
 ---
 
-## Screenshots
+## App Preview
 
-> Home landing page
-> ![Home](screenshots/home.png)
+### Home
 
-> Dashboard
-> ![Dashboard](screenshots/dashboard.png)
+<img src="screenshots/home.png" width="600"/>
 
-> My Workouts
-> ![Workouts](screenshots/workouts.png)
+### My Workouts
 
-> Progress
-> ![Progress](screenshots/progress.png)
+<img src="screenshots/workouts.png" width="600"/>
 
-> login/signup (Authentication)
-> ![forms](screenshots/forms.png)
+### Dashboard
 
----
+<img src="screenshots/dashboard.png" width="600"/>
+
+### Progress
+
+<img src="screenshots/progress.png" width="600"/>
+
+### Login & Register
+
+## <img src="screenshots/forms.png" width="600"/>
 
 ## Features
 
