@@ -123,3 +123,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
+
+
+# CSRF error
+CSRF_TRUSTED_ORIGINS = ['https://web-production-5fc12.up.railway.app']
