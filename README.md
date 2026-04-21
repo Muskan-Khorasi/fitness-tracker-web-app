@@ -61,7 +61,7 @@ their progress over time — with a dashboard, weekly goals, and streak tracking
 
 ## Architecture
 
-<img src="charts_screenshots\architecture.png" width="600"/>
+<img src="screenshots\architecture-1.png" width="600"/>
 
 fitness-tracker/
 │
