@@ -1,0 +1,63 @@
+{% extends "tracker/base.html" %} {% block content %}
+
+<div class="row justify-content-center text-center mt-5">
+  <div class="col-md-8">
+    <!-- Hero section -->
+    <h1 class="display-4 fw-bold mb-3">Track your fitness journey</h1>
+    <p class="lead text-muted mb-5">
+      Log your workouts, track your progress, and stay consistent. FitTrack
+      makes it simple to build habits that stick.
+    </p>
+
+    <!-- Call to action buttons -->
+    <div class="d-flex justify-content-center gap-3 mb-5">
+      <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-5">
+        Get started — it's free
+      </a>
+      <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg px-5">
+        Log in
+      </a>
+    </div>
+
+    <!-- 3 feature cards -->
+    <div class="row g-4 mt-3">
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body text-center">
+            <div class="fs-1 mb-3">🏃</div>
+            <h5 class="fw-bold">Log workouts</h5>
+            <p class="text-muted small">
+              Quickly log any activity — running, cycling, gym, yoga. Takes less
+              than 10 seconds.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body text-center">
+            <div class="fs-1 mb-3">📊</div>
+            <h5 class="fw-bold">Track progress</h5>
+            <p class="text-muted small">
+              See your weekly totals, streaks, and most logged activities at a
+              glance.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body text-center">
+            <div class="fs-1 mb-3">🎯</div>
+            <h5 class="fw-bold">Stay consistent</h5>
+            <p class="text-muted small">
+              Build momentum with streaks and hit your weekly minute targets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

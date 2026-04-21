@@ -1,0 +1,53 @@
+{% extends "tracker/base.html" %} {% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h1 class="h3 fw-bold mb-4">Log a Workout</h1>
+
+    <div class="card">
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+
+          <div class="mb-3">
+            <label for="id_activity" class="form-label fw-semibold"
+              >Activity</label
+            >
+            {{ form.activity }} {% if form.activity.errors %}
+            <div class="text-danger small mt-1">{{ form.activity.errors }}</div>
+            {% endif %}
+          </div>
+
+          <div class="mb-3">
+            <label for="id_duration" class="form-label fw-semibold"
+              >Duration (minutes)</label
+            >
+            {{ form.duration }} {% if form.duration.errors %}
+            <div class="text-danger small mt-1">{{ form.duration.errors }}</div>
+            {% endif %}
+          </div>
+
+          <div class="mb-3">
+            <label for="id_date" class="form-label fw-semibold">Date</label>
+            {{ form.date }} {% if form.date.errors %}
+            <div class="text-danger small mt-1">{{ form.date.errors }}</div>
+            {% endif %}
+          </div>
+
+          <div class="d-flex align-items-center gap-3 mt-4">
+            <button type="submit" class="btn btn-primary px-4">
+              Save Workout
+            </button>
+            <a
+              href="{% url 'workout_list' %}"
+              class="text-muted text-decoration-none"
+              >Cancel</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

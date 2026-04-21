@@ -1,0 +1,36 @@
+{% extends "tracker/base.html" %} {% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="h3 fw-bold">My Workouts</h1>
+  <a href="{% url 'add_workout' %}" class="btn btn-primary">+ Log a Workout</a>
+</div>
+
+{% if workouts %} {% for workout in workouts %}
+<div class="card mb-3">
+  <div class="card-body d-flex justify-content-between align-items-center">
+    <div>
+      <div class="fw-semibold fs-6">{{ workout.activity }}</div>
+      <div class="text-muted small">{{ workout.duration }} minutes</div>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <span class="text-muted small">{{ workout.date }}</span>
+      <a
+        href="{% url 'edit_workout' workout.pk %}"
+        class="btn btn-sm btn-outline-secondary"
+      >
+        Edit
+      </a>
+      <a
+        href="{% url 'delete_workout' workout.pk %}"
+        class="btn btn-sm btn-outline-danger"
+      >
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
+{% endfor %} {% else %}
+<div class="text-center text-muted py-5">
+  <p>No workouts logged yet. Start by adding one!</p>
+</div>
+{% endif %} {% endblock %}

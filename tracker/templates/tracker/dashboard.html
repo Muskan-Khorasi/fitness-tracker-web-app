@@ -1,0 +1,77 @@
+{% extends "tracker/base.html" %} {% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="h3 fw-bold">Dashboard</h1>
+  <a href="{% url 'add_workout' %}" class="btn btn-primary">+ Log Workout</a>
+</div>
+
+<!-- Stat cards row -->
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="card text-center p-3">
+      <div class="text-muted small mb-1">Total workouts</div>
+      <div class="fw-bold" style="font-size: 2rem">{{ total_workouts }}</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card text-center p-3">
+      <div class="text-muted small mb-1">Total minutes logged</div>
+      <div class="fw-bold" style="font-size: 2rem">{{ total_minutes }}</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card text-center p-3">
+      <div class="text-muted small mb-1">This week</div>
+      <div class="fw-bold" style="font-size: 2rem">
+        {{ weekly_minutes }} mins
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second row -->
+<div class="row g-3 mb-4">
+  <div class="col-md-6">
+    <div class="card p-3 h-100">
+      <div class="text-muted small mb-1">Most logged activity</div>
+      <div class="fw-bold fs-5">{{ most_logged }}</div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card p-3 h-100">
+      <div class="text-muted small mb-2">Last 7 days</div>
+      <!-- Simple bar chart using Bootstrap progress bars -->
+      {% for day in last_7_days %}
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <div style="width: 32px; font-size: 12px; color: var(--bs-secondary)">
+          {{ day.day }}
+        </div>
+        <div class="flex-grow-1 bg-light rounded" style="height: 20px">
+          {% if day.minutes > 0 %}
+          <div
+            class="bg-primary rounded"
+            style="height: 100%; width: {% widthratio day.minutes 120 100 %}%; 
+                      min-width: 4px; max-width: 100%;"
+          ></div>
+          {% endif %}
+        </div>
+        <div
+          style="
+            width: 40px;
+            font-size: 12px;
+            text-align: right;
+            color: var(--bs-secondary);
+          "
+        >
+          {% if day.minutes > 0 %}{{ day.minutes }}m{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
