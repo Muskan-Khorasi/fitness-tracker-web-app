@@ -61,23 +61,7 @@ their progress over time — with a dashboard, weekly goals, and streak tracking
 
 ## Architecture
 
-```
-Request → Gunicorn → Django URLs → View → Model (ORM) → PostgreSQL
-                                      ↓
-                                 Template → Bootstrap → Response
-```
-
-```mermaid
-flowchart LR
-    A[Browser] --> B[Gunicorn]
-    B --> C[Django URLs]
-    C --> D[Views]
-    D --> E[ORM]
-    E --> F[(PostgreSQL)]
-    D --> G[Templates]
-    G --> H[Bootstrap]
-    H --> A
-```
+<img src="charts_screenshots\architecture.png" width="600"/>
 
 fitness-tracker/
 │
